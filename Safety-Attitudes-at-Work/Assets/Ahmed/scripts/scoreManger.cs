@@ -6,7 +6,8 @@ public class scoreManger : MonoBehaviour
 {   
     public static scoreManger instance;
     public TextMeshProUGUI ScoreText;
-    int score = 0;
+    public score score;
+    // int score = 0;
 
     private void Awake() {
         
@@ -15,11 +16,11 @@ public class scoreManger : MonoBehaviour
     }
     void Start()
     {
-        ScoreText.text = score.ToString();
+        ScoreText.text = score.scoreValue.ToString();
     }
 
     public void AddPoints() {
-        score += 5;
-        ScoreText.text = score.ToString();
+        score.scoreValue += 10;
+        ScoreText.text = score.scoreValue.ToString();
     }
 }
